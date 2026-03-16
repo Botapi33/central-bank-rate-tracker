@@ -1,27 +1,127 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-
-<title>Global Central Bank Rate Tracker | BondStats</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Global Central Bank Rate Tracker | BondStats</title>
+  <meta
+    name="description"
+    content="Track central bank policy rates across major global economies with the BondStats Global Central Bank Rate Tracker."
+  />
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
+  <main class="tool-shell">
+    <section class="hero-card">
+      <p class="eyebrow">BondStats Tool</p>
+      <h1>Global Central Bank Rate Tracker</h1>
+      <p class="hero-text">
+        Compare policy rates across major central banks worldwide. This tracker helps users monitor
+        global monetary policy settings and their importance for bond markets, interest rates and
+        macro-financial conditions.
+      </p>
+    </section>
 
-<h1>Global Central Bank Rate Tracker</h1>
+    <section class="kpi-grid">
+      <article class="kpi-card">
+        <span class="kpi-label">Central Banks Tracked</span>
+        <strong id="kpiCount" class="kpi-value">--</strong>
+      </article>
 
-<p>
-Track policy interest rates from major central banks worldwide. 
-Central bank rates influence government bond yields and global financial conditions.
-</p>
+      <article class="kpi-card">
+        <span class="kpi-label">Average Policy Rate</span>
+        <strong id="kpiAverage" class="kpi-value">--</strong>
+      </article>
 
-<div id="rates"></div>
+      <article class="kpi-card">
+        <span class="kpi-label">Highest Policy Rate</span>
+        <strong id="kpiHighest" class="kpi-value">--</strong>
+      </article>
 
-<script src="script.js"></script>
+      <article class="kpi-card">
+        <span class="kpi-label">Lowest Policy Rate</span>
+        <strong id="kpiLowest" class="kpi-value">--</strong>
+      </article>
+    </section>
 
+    <section class="controls-card">
+      <div class="section-head">
+        <h2>Filter and Compare</h2>
+        <p>Search central banks, filter by region, and sort by name or policy rate.</p>
+      </div>
+
+      <div class="controls-grid">
+        <div class="field">
+          <label for="searchInput">Search</label>
+          <input id="searchInput" type="text" placeholder="Search bank or country" />
+        </div>
+
+        <div class="field">
+          <label for="regionFilter">Region</label>
+          <select id="regionFilter">
+            <option value="all">All Regions</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="stanceFilter">Policy Stance</label>
+          <select id="stanceFilter">
+            <option value="all">All Stances</option>
+            <option value="Tight">Tight</option>
+            <option value="Neutral">Neutral</option>
+            <option value="Loose">Loose</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="sortSelect">Sort By</label>
+          <select id="sortSelect">
+            <option value="rate_desc">Policy Rate (High to Low)</option>
+            <option value="rate_asc">Policy Rate (Low to High)</option>
+            <option value="name_asc">Central Bank (A–Z)</option>
+            <option value="country_asc">Country (A–Z)</option>
+            <option value="region_asc">Region (A–Z)</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <div class="section-head">
+        <h2>Policy Rate Dashboard</h2>
+        <p>
+          Central bank policy rates influence government bond yields, financial conditions and macro
+          expectations across global markets.
+        </p>
+      </div>
+
+      <div id="resultsInfo" class="results-info">Showing -- central banks</div>
+      <div id="bankGrid" class="bank-grid"></div>
+      <div id="emptyState" class="empty-state hidden">
+        No central banks match the selected filters.
+      </div>
+    </section>
+
+    <section class="insight-grid">
+      <article class="info-card">
+        <h3>Why Central Bank Rates Matter</h3>
+        <p>
+          Policy rates are one of the most important drivers of government bond yields. Changes in
+          central bank policy can affect borrowing costs, yield curves, inflation expectations and
+          macroeconomic conditions.
+        </p>
+      </article>
+
+      <article class="info-card">
+        <h3>How to Use This Tracker</h3>
+        <p>
+          Use this dashboard to compare monetary policy settings across economies, identify where
+          policy is tighter or looser, and connect central bank trends with sovereign bond markets.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
